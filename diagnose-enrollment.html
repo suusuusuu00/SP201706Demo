@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Autoimmune Flare-up Predictor - Diagnose - Enrollment</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="css/bootstrap2-toggle.min.css" rel="stylesheet">
+    <link href="css/bootstrap-toggle.min.css" rel="stylesheet">
+    <link href="css/bootstrap2-toggle.css" rel="stylesheet">
+    <link href="css/bootstrap-toggle.css" rel="stylesheet">
+    <link href="css/panel.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Autoimmune Flare-up Predictor</a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> คนไข้ SLE <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href=index.html> คนไข้ทั้งหมด</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="overall-patient.html"> ภาพรวม</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="diagnose.html"> วินิจฉัยโรค</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> วสุธร สนามชัย <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-user"></i> ประวัติส่วนตัว</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-gear"></i> ตั้งค่า</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="login.html"><i class="fa fa-fw fa-power-off"></i> ลงชื่อออก</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li>
+                        <p style="color: white; margin: 15px;">Study Number: PXXXXX</p>
+                    </li>
+                    <li class="active">
+                        <a href="diagnose-enrollment.html"><i class="fa fa-fw fa-file"></i> Enrollment</a>
+                    </li>
+                    <li>
+                        <a href="diagnose-followup.html"><i class="fa fa-fw fa-dashboard"></i> Follow up</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="center-block">
+            <div class="container-fluid">
+                <div class="col-lg-12">
+                    <div class="col-lg-11">
+                        <h1 class="page-header">Enrollment</h1>
+                    </div>
+                    <div class="col-lg-1">
+                        <button type="submit" class="btn btn-primary">Edit & Save</button>
+                    </div>
+                    <div class="row">
+                        <form role="form">
+                            <div class="col-lg-6">
+                                <!--Study Identity -->
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"> 
+                                        <h3 class="panel-title">Study Identity</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Date of diagnosis</label>  
+                                                <div class="form-group input-group">
+                                                    <input type="text" class="form-control">
+                                                    <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Date of enrollment</label>  
+                                                <div class="form-group input-group">
+                                                    <input type="text" class="form-control">
+                                                    <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Gender</label>  
+                                                <div data-toggle="buttons">
+                                                    <label class="btn btn-default active">
+                                                        <input type="radio" name="options" id="option1" autocomplete="off" checked>Male
+                                                    </label>
+                                                    <label class="btn btn-default">
+                                                        <input type="radio" name="options" id="option2" autocomplete="off">Female
+                                                    </label>
+                                                    <label class="btn btn-default">
+                                                        <input type="radio" name="options" id="option3" autocomplete="off">Missing
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Date of birth</label>  
+                                                <div class="form-group input-group">
+                                                    <input type="text" class="form-control">
+                                                    <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Religion</label>
+                                                <select class="form-control">
+                                                    <option>Religion 1</option>
+                                                    <option>Religion 2</option>
+                                                    <option>Religion 3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Education</label>
+                                                <select class="form-control">
+                                                    <option>Education 1</option>
+                                                    <option>Education 2</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label>Marital Status</label>  
+                                                <div data-toggle="buttons">
+                                                    <label class="btn btn-default active">
+                                                        <input type="radio" name="options" id="option1" autocomplete="off" checked>Single
+                                                    </label>
+                                                    <label class="btn btn-default">
+                                                        <input type="radio" name="options" id="option2" autocomplete="off">Married
+                                                    </label>
+                                                    <label class="btn btn-default">
+                                                        <input type="radio" name="options" id="option3" autocomplete="off">Divorced
+                                                    </label>
+                                                    <label class="btn btn-default">
+                                                        <input type="radio" name="options" id="option4" autocomplete="off">Widowed
+                                                    </label>
+                                                    <label class="btn btn-default">
+                                                        <input type="radio" name="options" id="option5" autocomplete="off">Missing
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Region</label>
+                                                <select class="form-control">
+                                                    <option>Region 1</option>
+                                                    <option>Region 2</option>
+                                                    <option>Region 3</option>
+                                                    <option>Region 4</option>
+                                                    <option>Region 5</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Occupation</label>  
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Income</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                        
+                                        
+                                    </div>
+                                </div>
+                                <!--Revised ACR criteria -->
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"> 
+                                        <h3 class="panel-title">Revised ACR criteria</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Serositis</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Malar rash</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Renal disorder</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Discoid rash</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Neurological disorder</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Photosensitivity</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Haematological disorder</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Oral ulcers	</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Immunological disorder</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Arthritis</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Positive ANA</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--SLICC criteria -->
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"> 
+                                        <h3 class="panel-title">SLICC criteria</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Acute cutaneous </label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Chronic cutaneous</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Mucosal ulcer</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Non scaring alopecia</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Arthritis</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Serositis</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Renal</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Neuro</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Hemolytic anemia</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Leukopenia/lymphopenia</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Thrombocytopenia</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">ANA	</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Anti-DNA</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Anti-Sm</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Anti-phospholipid</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Low complement</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Direct coomb's test</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Risk Behavior -->
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"> 
+                                        <h3 class="panel-title">Risk Behavior</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="col-lg-12"><h3>Smoking</h3></div>
+                                        <div class="col-lg-4">
+                                            <label>Duration <small>(Years)</small> </label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label>Amount<small>(Day)</small> </label>
+                                            <input type="text" class="form-control">
+                                            <p class="help-block">no. of cigarettes</p>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label>Cessation <small>(Years)</small> </label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="col-lg-12"><h3>Alcohol use</h3></div>
+                                        <div class="col-lg-4">
+                                            <label>Duration <small>(Years)</small> </label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label>Amount<small>(Day)</small> </label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label>Cessation <small>(Years)</small> </label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="col-lg-12"><p class="help-block">[Ethanol 30g = 1 bottle of Thai beer (650cc, 4.5% alcohol) = two 50cc cupfuls of Thai whisky (35% alcohol)]</p></div>
+                                        <div class="col-lg-12"><h3>Sun Expose</h3></div>
+                                        <div class="col-lg-6">
+                                            <label>Duration <small>(Hours per week)</small> </label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--OB-GYN -->
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"> 
+                                        <h3 class="panel-title">OB-GYN</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="col-lg-4">
+                                            <label class="col-lg-2">G </label>
+                                            <div class="col-lg-8"><input type="text" class="form-control"></div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label class="col-lg-2">P</label>
+                                            <div class="col-lg-8"><input type="text" class="form-control"></div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label class="col-lg-2">A </label>
+                                            <div class="col-lg-8"><input type="text" class="form-control"></div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Menstrual Cycle</label>
+                                                <select class="form-control">
+                                                    <option>Regular</option>
+                                                    <option>Irregular</option>
+                                                    <option>Absent </option>
+                                                    <option>Menopause</option>
+                                                    <option>Missing</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Pregnant<small>(weeks)</small></label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label>Mode of contraceptives</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Family history-->
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"> 
+                                        <h3 class="panel-title">Family history</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        
+                                    </div>   
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <!--Medical Condition -->
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"> 
+                                        <h3 class="panel-title">Medical Condition</h3>
+                                    </div>
+                                    <div class="panel-body ">
+                                        <div class="col-lg-12"><h3>Systemic autoimmune diseases</h3></div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Antiphospholipid Ab  Syndrome</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Rheumatoid arthritis (RA) </label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Dermatomyositis </label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Polymyositis </label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Systemic sclerosis (SSc) </label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Sjogren's Syndrome (SS) </label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Mixed connective tissue disease  </label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">LE/LP overlap syndrome </label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Primary biliary cirrhosis </label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Primary sclerosing cholangitis </label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-12"><h3>Tissue-specific autoimmune diseases</h3></div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">DM type 1 </label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Hashimoto's thyroiditis </label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Multiple sclerosis </label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Myasthenia gravis </label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Autoimmune hepatitis </label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-12"><h3>Metabolic & CVS co-morbidity  </h3></div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">DM type 2</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Hypertension</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Hyperlipidemia</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">CAD</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-12"><h3>Allergy</h3></div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Allergic rhinitis</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Allergic conjunctivitis</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Asthma</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Atopic dermatitis</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Allergic urticaria</label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Anaphylaxis </label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-lg-8">Hay fever </label> 
+                                            <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label>Food allergy </label> 
+                                            <input type="text" class="form-control"> 
+                                        </div>
+                                        <div class="col-lg-12"><h3>Other Co-morbidity</h3></div>
+                                        <div class="col-lg-12">
+                                            <h4>Infection</h4>
+                                        </div>
+                                         <div class="col-lg-6">
+                                            <label class="col-lg-4">From   </label>
+                                            <div class="form-group input-group col-lg-8">
+                                                <input type="text" class="form-control">
+                                                <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                             <label class="col-lg-4">To   </label>
+                                            <div class="form-group input-group col-lg-8">
+                                                <input type="text" class="form-control">
+                                                <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <h4>Major surgery</h4>
+                                        </div>
+                                         <div class="col-lg-6">
+                                            <label class="col-lg-4">From   </label>
+                                            <div class="form-group input-group col-lg-8">
+                                                <input type="text" class="form-control">
+                                                <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                             <label class="col-lg-4">To   </label>
+                                            <div class="form-group input-group col-lg-8">
+                                                <input type="text" class="form-control">
+                                                <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button></span>
+                                            </div>
+                                        </div>     
+                                        <div class="col-lg-12">
+                                            <h4>Osteoporosis/Fx</h4>
+                                        </div>
+                                         <div class="col-lg-6">
+                                            <label class="col-lg-4">Site   </label>
+                                            <div class="form-group input-group col-lg-8">
+                                                <input type="text" class="form-control">
+                                                <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                             <label class="col-lg-4">To   </label>
+                                            <div class="form-group input-group col-lg-8">
+                                                <input type="text" class="form-control">
+                                                <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button></span>
+                                            </div>
+                                        </div> 
+                                        <div class="col-lg-12">
+                                            <h4>Malignancy</h4>
+                                        </div>
+                                         <div class="col-lg-6">
+                                            <label class="col-lg-4">Specified   </label>
+                                            <div class="form-group input-group col-lg-8">
+                                                <input type="text" class="form-control">
+                                                <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                             <label class="col-lg-4">To   </label>
+                                            <div class="form-group input-group col-lg-8">
+                                                <input type="text" class="form-control">
+                                                <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    
+                                </div>
+                                <!--Organ Involvement -->
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"> 
+                                        <h3 class="panel-title">Organ Involvement </h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Date</label>  
+                                                <div class="form-group input-group">
+                                                    <input type="text" class="form-control">
+                                                    <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Organ</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-7">
+                                            <div class="form-group">
+                                                <label>Treatment</label>  
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <div class="form-group">
+                                                <label>Remission</label>
+                                                <input type="text" class="form-control">
+                                                <button type="submit" class="btn btn-default">Add</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered table-hover table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Date</th>
+                                                            <th>Organ</th>
+                                                            <th>Treatment</th>
+                                                            <th>Remission</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Added Date</td>
+                                                            <td>Added Organ</td>
+                                                            <td>Added Treatment</td>
+                                                            <td>Added Remission</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>   
+                                </div>
+                                <!--Previous Complication  -->
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"> 
+                                        <h3 class="panel-title">Previous Complication  </h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Date</label>  
+                                                <div class="form-group input-group">
+                                                    <input type="text" class="form-control">
+                                                    <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Organ</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-7">
+                                            <div class="form-group">
+                                                <label>Treatment</label>  
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <div class="form-group">
+                                                <label>Result</label>
+                                                <input type="text" class="form-control">
+                                                <button type="submit" class="btn btn-default">Add</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered table-hover table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Date</th>
+                                                            <th>Organ</th>
+                                                            <th>Treatment</th>
+                                                            <th>Result</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Added Date</td>
+                                                            <td>Added Organ</td>
+                                                            <td>Added Treatment</td>
+                                                            <td>Added Result</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>    
+                                </div>
+                                <!--Visiting   -->
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"> 
+                                        <h3 class="panel-title">Visiting   </h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        
+                                    </div>   
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap2-toggle.min.js"></script>
+
+</body>
+
+</html>

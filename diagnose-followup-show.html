@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Autoimmune Flare-up Predictor - Diagnose - Follow up</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="css/bootstrap2-toggle.min.css" rel="stylesheet">
+    <link href="css/bootstrap-toggle.min.css" rel="stylesheet">
+    <link href="css/bootstrap2-toggle.css" rel="stylesheet">
+    <link href="css/bootstrap-toggle.css" rel="stylesheet">
+    <link href="css/panel.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Autoimmune Flare-up Predictor</a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> คนไข้ SLE <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href=index.html> คนไข้ทั้งหมด</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="overall-patient.html"> ภาพรวม</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="diagnose.html"> วินิจฉัยโรค</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> วสุธร สนามชัย <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-user"></i> ประวัติส่วนตัว</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-gear"></i> ตั้งค่า</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="login.html"><i class="fa fa-fw fa-power-off"></i> ลงชื่อออก</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li>
+                        <p style="color: white; margin: 15px;">Study Number: PXXXXX</p>
+                    </li>
+                    <li>
+                        <a href="diagnose-enrollment.html"><i class="fa fa-fw fa-file"></i> Enrollment</a>
+                    </li>
+                    <li class="active">
+                        <a href="diagnose-followup.html"><i class="fa fa-fw fa-dashboard"></i> Follow up</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" >
+            <div class="container-fluid">
+                <div class="col-lg-11">
+                    <h1 class="page-header">Follow Up</h1>
+                </div>
+                <div class="col-lg-1 alert alert-success">
+                    <h4>ครั้งที่ XX</h4>
+                </div>
+                <div class="row">
+                    <form role="form">
+                        <!--Clinical presentation-->
+                        <div class="col-lg-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading"> 
+                                    <h3 class="panel-title">Clinical presentation</h3>
+                                </div>
+                                <div class="panel-body ">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="col-lg-12"><h3>1. Constitutional Symptoms</h3></div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Fatigue</label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Weight loss  </label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-12"><h3>2. Skin & mucous membrane</h3></div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Malar rash</label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Discoid rash  </label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Annular rash/SCLE  </label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-4">Other rash   </label>
+                                                <div class="form-group col-lg-8">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Photosensitivity   </label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Oral/nasopharyngeal ulcers  </label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Localized scaring alopecia  </label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Diffuse non-scaring alopecia  </label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Raynaud’s phenomenon  </label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Digital gangrene  </label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-12"><h3>3. Cardiopulmonary involvement</h3></div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Interstitial lung disease</label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Lupus Pneumonitis  </label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Pulmonary HT  </label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                        
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="col-lg-12"><h3>4. GI & Renal involvement </h3></div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Edema</label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Oliguria</label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Dialysis</label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">GI vasculitis</label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Acalculous cholecystitis</label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-12"><h3>5. Hematologic disorder </h3></div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">AIHA</label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Petechiae/bleeding tendency</label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">DVT</label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-12"><h3>6. Neurological involvement  </h3></div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Acute confusional state/delirium </label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Myelopathy /Demyelinating disease</label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Peripheral neuropathy</label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Aseptic meningitis</label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                             <div class="col-lg-12"><h3>7. Musculoskeletal & LN involvement  </h3></div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Arthralgias</label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Lymphadenopathy</label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading"> 
+                                    <h3 class="panel-title">Disease Activity: SLEDAI (within 30 days)</h3>
+                                </div>
+                                <div class="panel-body ">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="col-lg-12">
+                                                <label class="col-lg-4">Physicians Global Assessment</label>
+                                                <input id="bootstrap-slider" type="text" data-slider-min="0" data-slider-max="3" data-slider-step="1" data-slider-value="1"/>
+                                                <div class="valueLabel">Level <span id="sliderValue">1</span></div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <h3>1. CNS (8 each)</h3>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Seizure</label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Psychosis</label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Organic brain syndrome</label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Visual disturbance</label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <label class="col-lg-3">Cranial nerve</label>
+                                                <div class="form-group col-lg-9">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Lupus headache</label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">CVA</label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <h3>2. Vascular (8)</h3>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Vasculitis</label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <h3>3. Musculoskeletal (4 each)</h3>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-4">Arthritis <small>Joint(s)</small></label>
+                                                <div class="form-group col-lg-8">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Myositis</label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <h3>4. Renal (4 each)</h3>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Casts (cell)</label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Hematuria</label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Proteinuria</label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Pyuria</label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="col-lg-12">
+                                                <h3>5. Immunology (2 each)</h3>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Low complement</label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Increased DNA binding</label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <h3>6. Skin (2 each)</h3>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Rash </label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Alopecia</label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Mucous membrane</label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <h3>7. Serositis (2 each)  </h3>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Pleurisy </label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Pericarditis</label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <h3>8. Hematology (1 each) </h3>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Thrombocytopenia </label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Leukopenia</label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <h3>9. Consitutional (1 each)</h3>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label class="col-lg-8">Fever </label> 
+                                                <input class="col-lg-4" type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger"> 
+                                            </div>
+                                            <div class="col-lg-12"><br></div>
+                                            <div class="col-lg-12 alert alert-info">
+                                                <h4>Total score = XX / XX</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="col-lg-12">
+                                <div class="panel panel-green">
+                                    <div class="panel-heading">
+                                         <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Area Line Graph Example with Tooltips</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div id="morris-area-chart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootslider.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap2-toggle.min.js"></script>
+    <script src="js/plugins/morris/raphael.min.js"></script>
+
+    <script src="js/plugins/morris/morris.min.js"></script>
+    <script src="js/plugins/morris/morris-data.js"></script>
+
+</body>
+
+</html>
