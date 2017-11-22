@@ -38,24 +38,16 @@
 </head>
 
 <body>
-
-    <div id="wrapper">
-        <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">Autoimmune Flare-up Predictor</a>
+                <a class="navbar-brand" href="index.html">SLE Flare-up Predictor</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> คนไข้ SLE <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle activebutton" data-toggle="dropdown"> คนไข้ SLE <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href=index.html> คนไข้ทั้งหมด</a>
@@ -85,31 +77,115 @@
                     </ul>
                 </li>
             </ul>
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav side-nav">
-                    <li>
-                        <p style="color: white; margin: 15px;">Study Number: PXXXXX</p>
-                    </li>
-                    <li>
-                        <a href="diagnose-enrollment.html"><i class="fa fa-fw fa-file"></i> Enrollment</a>
-                    </li>
-                    <li class="active">
-                        <a href="diagnose-followup.html"><i class="fa fa-fw fa-dashboard"></i> Follow up</a>
-                    </li>
-                </ul>
-            </div>
         </nav>
-
-        <div id="page-wrapper" >
+    
+    <div id="page-wrapper">
             <div class="container-fluid">
+                <div class="panel panel-default">
                 <div class="col-lg-11">
-                    <h1 class="page-header">Follow Up</h1>
+                    <h1 class="panel-heading">Follow Up</h1>
                 </div>
                 <div class="col-lg-1">
                     <form action="diagnose-followup-show.html">
                         <button type="submit" class="btn btn-primary">Save&Result</button>
                     </form>
                 </div>
+                </div>
+                
+                <!--Visiting   -->
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"> 
+                                        <h3 class="panel-title">Visiting   </h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        
+                                    </div>   
+                                </div>
+                <!--Risk Behavior -->
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"> 
+                                        <h3 class="panel-title">Risk Behavior</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="col-lg-12"><h3>Smoking</h3></div>
+                                        <div class="col-lg-4">
+                                            <label>Duration <small>(Years)</small> </label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label>Amount<small>(Day)</small> </label>
+                                            <input type="text" class="form-control">
+                                            <p class="help-block">no. of cigarettes</p>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label>Cessation <small>(Years)</small> </label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="col-lg-12"><h3>Alcohol use</h3></div>
+                                        <div class="col-lg-4">
+                                            <label>Duration <small>(Years)</small> </label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label>Amount<small>(Day)</small> </label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label>Cessation <small>(Years)</small> </label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="col-lg-12"><p class="help-block">[Ethanol 30g = 1 bottle of Thai beer (650cc, 4.5% alcohol) = two 50cc cupfuls of Thai whisky (35% alcohol)]</p></div>
+                                        <div class="col-lg-12"><h3>Sun Expose</h3></div>
+                                        <div class="col-lg-6">
+                                            <label>Duration <small>(Hours per week)</small> </label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--OB-GYN -->
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"> 
+                                        <h3 class="panel-title">OB-GYN</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="col-lg-4">
+                                            <label class="col-lg-2">G </label>
+                                            <div class="col-lg-8"><input type="text" class="form-control"></div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label class="col-lg-2">P</label>
+                                            <div class="col-lg-8"><input type="text" class="form-control"></div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label class="col-lg-2">A </label>
+                                            <div class="col-lg-8"><input type="text" class="form-control"></div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Menstrual Cycle</label>
+                                                <select class="form-control">
+                                                    <option>Regular</option>
+                                                    <option>Irregular</option>
+                                                    <option>Absent </option>
+                                                    <option>Menopause</option>
+                                                    <option>Missing</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Pregnant<small>(weeks)</small></label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label>Mode of contraceptives</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                 <div class="row">
                     <form role="form">
                         <!--Clinical presentation-->
@@ -409,8 +485,6 @@
                 </div>
             </div>
             <!-- /.container-fluid -->
-        </div>
-        <!-- /#page-wrapper -->
     </div>
     <!-- /#wrapper -->
 

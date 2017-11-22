@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--For line plots-->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SLE Flare-up Predictor</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="css/bootstrap2-toggle.min.css" rel="stylesheet">
+    <link href="css/bootstrap-toggle.min.css" rel="stylesheet">
+    <link href="css/bootstrap2-toggle.css" rel="stylesheet">
+    <link href="css/bootstrap-toggle.css" rel="stylesheet">
+    <link href="css/panel.css" rel="stylesheet">
+    <link href="css/circlePacking.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Morris Charts CSS -->
+    <link href="css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+  
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">SLE Flare-up Predictor</a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle activebutton" data-toggle="dropdown"> คนไข้ SLE <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href=index.html> คนไข้ทั้งหมด</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="overall-patient.html"> ภาพรวม</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="diagnose.html"> วินิจฉัยโรค</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> วสุธร สนามชัย <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-user"></i> ประวัติส่วนตัว</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-gear"></i> ตั้งค่า</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="login.html"><i class="fa fa-fw fa-power-off"></i> ลงชื่อออก</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="page-wrapper" >
+            <div class="container-fluid">
+                <div class="row">
+                            <div class="col-lg-6">
+                                <!--Study Number -->
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"> 
+                                        <h3 class="panel-title">Study number xxxxx      วันที่ 23 พฤศจิกายน พ.ศ.2560 </h3>
+                                    </div>
+                                </div>
+                                <!--Follow up list -->
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"> 
+                                        <h3 class="panel-title">รายการ Follow up</h3>
+                                    </div>
+                                    <div class="table-responsive">
+                            <table class="table table-bordered table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>ลำดับ</th>
+                                        <th>วันที่</th>
+                                        <th>ดูรายละเอียด</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="myTable">
+                                    <tr class="success">
+                                        <td>1</td>
+                                        <td>2017/01/01</td>
+                                        <td><a>ดูรายละเอียด</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>2017/01/01</td>
+                                        <td><a>ดูรายละเอียด</a></td>
+                                    </tr>
+                                    <tr class="success">
+                                        <td>3</td>
+                                        <td>2017/01/01</td>
+                                        <td><a>ดูรายละเอียด</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>2017/01/01</td>
+                                        <td><a>ดูรายละเอียด</a></td>
+                                    </tr>
+                                    <tr class="success">
+                                        <td>5</td>
+                                        <td>2017/01/01</td>
+                                        <td><a>ดูรายละเอียด</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>2017/01/01</td>
+                                        <td><a>ดูรายละเอียด</a></td>
+                                    </tr>
+                                    <tr class="success">
+                                        <td>6</td>
+                                        <td>2017/01/01</td>
+                                        <td><a>ดูรายละเอียด</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>2017/01/01</td>
+                                        <td><a>ดูรายละเอียด</a></td>
+                                    </tr>
+                                    <tr class="success">
+                                        <td>8</td>
+                                        <td>2017/01/01</td>
+                                        <td><a>ดูรายละเอียด</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                 <!--Add follow up form -->
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"> 
+                                        <h3 class="panel-title">เพิ่มรายการ Follow up</h3>
+                                        <form method="get">
+                                            <button type="submit" class="btn btn-default">เพิ่มเติม</button>
+                                            <div class="col-lg-5">
+                                            
+                                            </div>
+                                            
+                                        </form>  
+                                    </div>
+                                </div>
+                                <!--Chart-->
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Area Line Graph Example with Tooltips</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div id="morris-area-chart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                </div> 
+                 
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                        <div class="panel-heading"> 
+                            <h3 class="panel-title">อาการและการกำเริบ</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="col-lg-12">
+                                <h4>ตารางแสดงอาการและการกำเริบ</h4>
+                                <div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
+                                
+                                <script src="js/lineplots.js"></script>
+                                
+                            </div>    
+                        </div>
+                    </div>
+                    </div>
+                    
+                </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap2-toggle.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script type="text/javascript" src="flare.json"></script>    
+    <!-- Morris Charts JavaScript -->
+    <script src="js/plugins/morris/raphael.min.js"></script>
+    <script src="js/plugins/morris/morris.min.js"></script>
+    <script src="js/plugins/morris/morris-data.js"></script>
+
+</body>
+
+</html>
