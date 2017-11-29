@@ -28,40 +28,80 @@
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#FamHisAuto').change(function(){
+                if($(this).val() == '1'){
+                    $('#ShowFormAuto').show();
+                }
+                else{
+                    $('#ShowFormAuto').hide();
+                }
+            })
+        });
+        $(document).ready(function(){
+            $('#FamHisRenal').change(function(){
+                if($(this).val() == '1'){
+                    $('#ShowFormRenal').show();
+                }
+                else{
+                    $('#ShowFormRenal').hide();
+                }
+            })
+        });
+        $(document).ready(function(){
+            $('#SysAuto').change(function(){
+                if(this.checked){
+                    $("#SysAuto1").show();
+                    $("#SysAuto2").show();
+                    $("#SysAuto3").show();
+                    $("#SysAuto4").show();
+                    $("#SysAuto5").show();
+                }
+                else{
+                    $("#SysAuto1").hide();
+                    $("#SysAuto2").hide();
+                    $("#SysAuto3").hide();
+                    $("#SysAuto4").hide();
+                    $("#SysAuto5").hide();
+                }
+            })
+        });
+        $(document).ready(function(){
+            $('#TisAuto').change(function(){
+                if(this.checked){
+                    $("#TisAuto1").show();
+                    $("#TisAuto2").show();
+                    $("#TisAuto3").show();
+                    $("#TisAuto4").show();
+                    $("#TisAuto5").show();
+                }
+                else{
+                    $("#TisAuto1").hide();
+                    $("#TisAuto2").hide();
+                    $("#TisAuto3").hide();
+                    $("#TisAuto4").hide();
+                    $("#TisAuto5").hide();
+                }
+            })
+        });
+    </script>
 </head>
 
 <body>
 
     <div id="page-wrapper">
         <!-- Navigation -->
-     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <a class="navbar-brand" href="index.html">SLE Flare-up Predictor</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle activebutton" data-toggle="dropdown"> คนไข้ SLE <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href=index.html> คนไข้ทั้งหมด</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="overall-patient.html"> ภาพรวม</a>
-                        </li>
-                    </ul>
-                </li>
                 <li>
-                    <a href="diagnose.html"> วินิจฉัยโรค</a>
+                <a href="index.html"> ภาพรวมคนไข้ทั้งหมด </a>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> วสุธร สนามชัย <b class="caret"></b></a>
@@ -102,18 +142,16 @@
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label>Date of diagnosis</label>  
-                                                <div class="form-group input-group">
-                                                    <input type="text" class="form-control">
-                                                    <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button></span>
+                                                <div class="form-group">
+                                                    <input type="date" class="form-control">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label>Date of enrollment</label>  
-                                                <div class="form-group input-group">
-                                                    <input type="text" class="form-control">
-                                                    <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button></span>
+                                                <div class="form-group">
+                                                    <input type="date" class="form-control">
                                                 </div>
                                             </div>
                                         </div>
@@ -136,9 +174,8 @@
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label>Date of birth</label>  
-                                                <div class="form-group input-group">
-                                                    <input type="text" class="form-control">
-                                                    <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button></span>
+                                                <div class="form-group">
+                                                    <input type="date" class="form-control">
                                                 </div>
                                             </div>
                                         </div>
@@ -348,8 +385,110 @@
                                         <h3 class="panel-title">Family history</h3>
                                     </div>
                                     <div class="panel-body">
+                                        <div class="col-lg-10">
+                                            <label>Family history of autoimmune disease </label> 
+                                            <select id="FamHisAuto"> 
+                                                <option value="0" selected>No</option>
+                                                <option value="1">Yes</option>
+                                                <option value="2">Unknown</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-8" id="ShowFormAuto" style="display:none;">
+                                            <div class="form-group"> 
+                                            <label class="col-lg-6">Systemic autoimmune</label> 
+                                            <input type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger" id="SysAuto"> 
+                                            </div>
+                                            
+                                            
+                                            <div id="SysAuto1" style="display:none;">
+                                                <label class="col-lg-8">SLE</label> 
+                                                <input type="text"> 
+                                                <button>Add</button>
+                                            </div>
+                                            
+                                            <div id="SysAuto2" style="display:none;">
+                                                <label class="col-lg-8">RA</label> 
+                                                <input type="text"> 
+                                                <button>Add</button>
+                                            </div>
+                                            <div id="SysAuto3" style="display:none;">
+                                                <label class="col-lg-8">Dermatomyositis</label> 
+                                                <input type="text"> 
+                                                <button>Add</button> 
+                                            </div>
+                                            <div id="SysAuto4" style="display:none;">    
+                                                <label class="col-lg-8">Systemic sclerosis</label> 
+                                                <input type="text"> 
+                                                <button>Add</button> 
+                                            </div>
+                                            <div id="SysAuto5" style="display:none;">    
+                                                <label class="col-lg-8">Sjogren's Syndrome</label> 
+                                                <input type="text"> 
+                                                <button>Add</button> 
+                                            </div>
+                                            
+                                                
+                                            <div class="form-group"> 
+                                            <label class="col-lg-6">Tissue-specific autoimmune</label> 
+                                            <input type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="success" data-offstyle="danger" id="TisAuto"> 
+                                            </div>
+                                            
+                                            <div id="TisAuto1" style="display:none;">
+                                                <label class="col-lg-8">DM Type 1</label> 
+                                                <input type="text"> 
+                                                <button>Add</button>  
+                                            </div>
+                                            <div id="TisAuto2" style="display:none;">
+                                                <label class="col-lg-8">Hashimoto's thyroidditis</label> 
+                                                <input type="text"> 
+                                                <button>Add</button>
+                                            </div>
+                                            <div id="TisAuto3" style="display:none;">
+                                                <label class="col-lg-8">Multiple sclerosis</label> 
+                                                <input type="text"> 
+                                                <button>Add</button>
+                                            </div>
+                                            <div id="TisAuto4" style="display:none;">    
+                                                <label class="col-lg-8">Myasthenia gravis</label> 
+                                                <input type="text"> 
+                                                <button>Add</button>
+                                            </div>
+                                            <div id="TisAuto5" style="display:none;">    
+                                                <label class="col-lg-8">Other</label> 
+                                                <input type="text"> 
+                                                <button>Add</button>
+                                            </div>
+                                            
+                                            
+                                            
+                                            
+                                        </div>
+                                        <div class="col-lg-10">
+                                            <label>Family history of renal disease/chronic glomerulonephritis</label> 
+                                            <select id="FamHisRenal"> 
+                                                <option value="0" selected>No</option>
+                                                <option value="1">Yes</option>
+                                                <option value="2">Unknown</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-8" id="ShowFormRenal" style="display:none;">
+                                            <label class="col-lg-10">Nephrotic syndrome /Glomerular disease</label>
+                                            <input type="text"> 
+                                            <button>Add</button>
+                                            <label class="col-lg-8">Stone </label>
+                                            <input type="text"> 
+                                            <button>Add</button>
+                                            <label class="col-lg-8">ESRD  </label>
+                                            <input type="text"> 
+                                            <button>Add</button>
+                                            <label class="col-lg-8">Other</label>
+                                            <input type="text"> 
+                                            <button>Add</button>
+                                        </div>
                                         
-                                    </div>   
+                                        
+                                    </div>
+                                    
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -477,68 +616,60 @@
                                         </div>
                                          <div class="col-lg-6">
                                             <label class="col-lg-4">From   </label>
-                                            <div class="form-group input-group col-lg-8">
-                                                <input type="text" class="form-control">
-                                                <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button></span>
-                                            </div>
+                                            <div class="form-group">
+                                                    <input type="date" class="form-control">
+                                                </div>
                                         </div>
                                         <div class="col-lg-6">
                                              <label class="col-lg-4">To   </label>
-                                            <div class="form-group input-group col-lg-8">
-                                                <input type="text" class="form-control">
-                                                <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button></span>
-                                            </div>
+                                            <div class="form-group">
+                                                    <input type="date" class="form-control">
+                                                </div>
                                         </div>
                                         <div class="col-lg-12">
                                             <h4>Major surgery</h4>
                                         </div>
                                          <div class="col-lg-6">
                                             <label class="col-lg-4">From   </label>
-                                            <div class="form-group input-group col-lg-8">
-                                                <input type="text" class="form-control">
-                                                <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button></span>
+                                            <div class="form-group">
+                                                    <input type="date" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                              <label class="col-lg-4">To   </label>
-                                            <div class="form-group input-group col-lg-8">
-                                                <input type="text" class="form-control">
-                                                <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button></span>
-                                            </div>
+                                            <div class="form-group">
+                                                    <input type="date" class="form-control">
+                                                </div>
                                         </div>     
                                         <div class="col-lg-12">
                                             <h4>Osteoporosis/Fx</h4>
                                         </div>
                                          <div class="col-lg-6">
                                             <label class="col-lg-4">Site   </label>
-                                            <div class="form-group input-group col-lg-8">
-                                                <input type="text" class="form-control">
-                                                <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button></span>
-                                            </div>
+                                            <div class="form-group">
+                                                    <input type="date" class="form-control">
+                                                </div>
                                         </div>
                                         <div class="col-lg-6">
                                              <label class="col-lg-4">To   </label>
-                                            <div class="form-group input-group col-lg-8">
-                                                <input type="text" class="form-control">
-                                                <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button></span>
-                                            </div>
+                                            <div class="form-group">
+                                                    <input type="date" class="form-control">
+                                                </div>
                                         </div> 
                                         <div class="col-lg-12">
                                             <h4>Malignancy</h4>
                                         </div>
                                          <div class="col-lg-6">
                                             <label class="col-lg-4">Specified   </label>
-                                            <div class="form-group input-group col-lg-8">
-                                                <input type="text" class="form-control">
-                                                <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button></span>
-                                            </div>
+                                            <div class="form-group">
+                                                    <input type="date" class="form-control">
+                                                </div>
                                         </div>
                                         <div class="col-lg-6">
                                              <label class="col-lg-4">To   </label>
-                                            <div class="form-group input-group col-lg-8">
-                                                <input type="text" class="form-control">
-                                                <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button></span>
-                                            </div>
+                                            <div class="form-group">
+                                                    <input type="date" class="form-control">
+                                                </div>
                                         </div>
                                     </div>
                                     
@@ -554,9 +685,8 @@
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label>Date</label>  
-                                                <div class="form-group input-group">
-                                                    <input type="text" class="form-control">
-                                                    <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button></span>
+                                                <div class="form-group">
+                                                    <input type="date" class="form-control">
                                                 </div>
                                             </div>
                                         </div>
@@ -612,9 +742,8 @@
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label>Date</label>  
-                                                <div class="form-group input-group">
-                                                    <input type="text" class="form-control">
-                                                    <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button></span>
+                                               <div class="form-group">
+                                                    <input type="date" class="form-control">
                                                 </div>
                                             </div>
                                         </div>
@@ -674,10 +803,10 @@
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
+    <script src="js/bootslider.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap2-toggle.min.js"></script>
-
 </body>
 
 </html>

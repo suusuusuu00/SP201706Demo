@@ -50,20 +50,8 @@
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle activebutton" data-toggle="dropdown"> คนไข้ SLE <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href=index.html> คนไข้ทั้งหมด</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="overall-patient.html"> ภาพรวม</a>
-                        </li>
-                    </ul>
-                </li>
                 <li>
-                    <a href="diagnose.html"> วินิจฉัยโรค</a>
+                <a href="index.html"> ภาพรวมคนไข้ทั้งหมด </a>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> วสุธร สนามชัย <b class="caret"></b></a>
@@ -179,15 +167,15 @@
                                     <div class="panel-body"> 
                                         <ol class="breadcrumb">
                                             <li class="active">
-                                                <form id="form" action="/proreport01" method="get">
+                                                <form id="form" action="patient-records.html" method="get">
                                                     <div class="form-group">
-                                                        <p>Filters</p>
-                                                        <label>Rank</label><br>
+                                                        <p>โปรดระบุ Study Number เพื่อใช้ในการค้นหาผู้ป่วย</p>
+                                                        <label>Study Number</label><br>
                                                         <div class="col-lg-5">
                                                             <input id = "rank" name = "rank" value="" class="form-control">
                                                         </div>
                                                         <div class="col-lg-5">
-                                                            <button type="submit" class="btn btn-default">Submit Button</button>
+                                                            <button type="submit" class="btn btn-default" >ค้นหา</button>
                                                         </div>
                                                     </div>
                                                 </form>    
@@ -226,7 +214,7 @@
                                         <th>ชื่อ</th>
                                         <th>นามสกุล</th>
                                         <th>เพศ</th>
-                                        <th>ดูรายละเอียด</th>
+                                        <th href="patient-records.html">ดูรายละเอียด</th>
                                         <th>% Flare-up</th>
                                     </tr>
                                 </thead>
@@ -234,83 +222,83 @@
                                     <tr class="success">
                                         <td>1</td>
                                         <td>P00001</td>
-                                        <td>ช้าง</td>
-                                        <td>ตกมัน</td>
+                                        <td>สมบูรณ์</td>
+                                        <td>พูนสุข</td>
                                         <td>ชาย</td>
-                                        <td><a>ดูรายละเอียด</a></td>
+                                        <td><a href="patient-records.html">ดูรายละเอียด</a></td>
                                         <td>30.50 %</td>
                                     </tr>
                                     <tr>
-                                        <td>1</td>
-                                        <td>P00001</td>
-                                        <td>ช้าง</td>
-                                        <td>ตกมัน</td>
+                                        <td>2</td>
+                                        <td>P00002</td>
+                                        <td>อมร</td>
+                                        <td>เทพพิทักษ์</td>
                                         <td>ชาย</td>
-                                        <td><a>ดูรายละเอียด</a></td>
-                                        <td>30.50 %</td>
+                                        <td><a href="patient-records.html">ดูรายละเอียด</a></td>
+                                        <td>41.50 %</td>
                                     </tr>
                                     <tr class="success">
-                                        <td>1</td>
-                                        <td>P00001</td>
-                                        <td>ช้าง</td>
-                                        <td>ตกมัน</td>
+                                        <td>3</td>
+                                        <td>P00003</td>
+                                        <td>ดอกไม้</td>
+                                        <td>ชบางาม</td>
+                                        <td>หญิง</td>
+                                        <td><a href="patient-records.html">ดูรายละเอียด</a></td>
+                                        <td>40.50 %</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>P00004</td>
+                                        <td>มนตรา</td>
+                                        <td>มานิช</td>
+                                        <td>หญิง</td>
+                                        <td><a href="patient-records.html">ดูรายละเอียด</a></td>
+                                        <td>35 %</td>
+                                    </tr>
+                                    <tr class="success">
+                                        <td>5</td>
+                                        <td>P00005</td>
+                                        <td>ชูใจ</td>
+                                        <td>งามจิต</td>
+                                        <td>หญิง</td>
+                                        <td><a href="patient-records.html">ดูรายละเอียด</a></td>
+                                        <td>18.50 %</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>P00006</td>
+                                        <td>อุดร</td>
+                                        <td>เดชา</td>
                                         <td>ชาย</td>
-                                        <td><a>ดูรายละเอียด</a></td>
+                                        <td><a href="patient-records.html">ดูรายละเอียด</a></td>
+                                        <td>24.50 %</td>
+                                    </tr>
+                                    <tr class="success">
+                                        <td>7</td>
+                                        <td>P00007</td>
+                                        <td>มานที</td>
+                                        <td>หิมาสุข</td>
+                                        <td>ชาย</td>
+                                        <td><a href="patient-records.html">ดูรายละเอียด</a></td>
                                         <td>30.50 %</td>
                                     </tr>
                                     <tr>
-                                        <td>1</td>
-                                        <td>P00001</td>
-                                        <td>ช้าง</td>
-                                        <td>ตกมัน</td>
+                                        <td>8</td>
+                                        <td>P00008</td>
+                                        <td>กุญชร</td>
+                                        <td>ผ่องพงศ์พันธ์</td>
                                         <td>ชาย</td>
-                                        <td><a>ดูรายละเอียด</a></td>
-                                        <td>30.50 %</td>
+                                        <td><a href="patient-records.html">ดูรายละเอียด</a></td>
+                                        <td>48 %</td>
                                     </tr>
                                     <tr class="success">
-                                        <td>1</td>
-                                        <td>P00001</td>
-                                        <td>ช้าง</td>
-                                        <td>ตกมัน</td>
+                                        <td>9</td>
+                                        <td>P00009</td>
+                                        <td>จันทร์</td>
+                                        <td>วิวังวน</td>
                                         <td>ชาย</td>
-                                        <td><a>ดูรายละเอียด</a></td>
-                                        <td>30.50 %</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>P00001</td>
-                                        <td>ช้าง</td>
-                                        <td>ตกมัน</td>
-                                        <td>ชาย</td>
-                                        <td><a>ดูรายละเอียด</a></td>
-                                        <td>30.50 %</td>
-                                    </tr>
-                                    <tr class="success">
-                                        <td>1</td>
-                                        <td>P00001</td>
-                                        <td>ช้าง</td>
-                                        <td>ตกมัน</td>
-                                        <td>ชาย</td>
-                                        <td><a>ดูรายละเอียด</a></td>
-                                        <td>30.50 %</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>P00001</td>
-                                        <td>ช้าง</td>
-                                        <td>ตกมัน</td>
-                                        <td>ชาย</td>
-                                        <td><a>ดูรายละเอียด</a></td>
-                                        <td>30.50 %</td>
-                                    </tr>
-                                    <tr class="success">
-                                        <td>1</td>
-                                        <td>P00001</td>
-                                        <td>ช้าง</td>
-                                        <td>ตกมัน</td>
-                                        <td>ชาย</td>
-                                        <td><a>ดูรายละเอียด</a></td>
-                                        <td>30.50 %</td>
+                                        <td><a href="patient-records.html">ดูรายละเอียด</a></td>
+                                        <td>34 %</td>
                                     </tr>
                                 </tbody>
                             </table>
